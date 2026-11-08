@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARITIME PRO | بوابة الدراسة البحرية - تأمين النوبة</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #05070b;
+      --bg-secondary: #0c1017;
+      --card-bg: rgba(18, 24, 36, 0.65);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(56, 189, 248, 0.4);
+      --accent-blue: #0071e3;
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --glass-blur: blur(24px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Cairo', 'Inter', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 113, 227, 0.14) 0%, transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.07) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    /* Ultra-sleek Apple/Samsung Glass Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(5, 7, 11, 0.72);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.25rem;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #0071e3, #38bdf8);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 5px;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+    }
+
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 8px 20px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-btn.active, .nav-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, #0071e3, #0284c7);
+      box-shadow: 0 4px 15px rgba(0, 113, 227, 0.4);
+    }
+
+    /* Hero Section - Apple Pro Style */
+    .hero {
+      padding: 140px 24px 70px;
+      max-width: 1320px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #38bdf8 0%, #0071e3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 36px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0071e3, #0284c7);
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-cyan);
+    }
+
+    /* Bento Grid Summary Stats */
+    .bento-stats {
+      max-width: 1320px;
+      margin: 20px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .bento-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px;
+      backdrop-filter: var(--glass-blur);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bento-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .bento-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 6px;
+    }
+
+    .bento-title {
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .bento-sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Main Content Container */
+    .main-container {
+      max-width: 1320px;
+      margin: 0 auto 100px;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Category Pills Filter (Samsung OneUI / Apple Segmented Style) */
+    .category-bar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 32px;
+      scrollbar-width: none;
+    }
+
+    .category-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-chip {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 20px;
+      border-radius: 18px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cat-chip:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #fff;
+    }
+
+    .cat-chip.active {
+      background: linear-gradient(135deg, rgba(0, 113, 227, 0.25), rgba(56, 189, 248, 0.2));
+      border-color: var(--accent-cyan);
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0, 113, 227, 0.25);
+    }
+
+    .cat-count {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Study Cards Grid */
+    .questions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .questions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .q-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 26px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .q-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-4px);
+    }
+
+    .q-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .q-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 99px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .rule-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.1);
+      padding: 4px 12px;
+      border-radius: 99px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    /* Visual Mast & Signal Display inside Card */
+    .visual-sim {
+      height: 92px;
+      background: radial-gradient(circle at center, #111927 0%, #06090f 100%);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 10px;
+      position: relative;
+    }
+
+    .sim-label {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .mast-pole {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-left: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .light-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+    .light-white { background: #fff; box-shadow: 0 0 12px #fff; }
+    .light-red { background: #ef4444; box-shadow: 0 0 12px #ef4444; }
+    .light-green { background: #10b981; box-shadow: 0 0 12px #10b981; }
+    .light-amber {
+      background: #f59e0b;
+      box-shadow: 0 0 14px #f59e0b;
+      animation: pulseAmber 0.8s infinite alternate;
+    }
+
+    @keyframes pulseAmber {
+      from { opacity: 0.3; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1.15); }
+    }
+
+    .shape-ball {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #1e293b;
+      border: 2px solid #94a3b8;
+    }
+
+    .shape-diamond {
+      width: 14px;
+      height: 14px;
+      background: #1e293b;
+      border: 2px solid #38bdf8;
+      transform: rotate(45deg);
+    }
+
+    .q-en {
+      font-family: 'Inter', sans-serif;
+      direction: ltr;
+      text-align: left;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .q-ar {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      margin-bottom: 18px;
+      padding-right: 10px;
+      border-right: 3px solid var(--accent-blue);
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .opt-item {
+      font-family: 'Inter', sans-serif;
+      direction: ltr;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .opt-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .opt-item.correct-reveal {
+      background: rgba(16, 185, 129, 0.16);
+      border-color: var(--accent-emerald);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .opt-item.wrong-reveal {
+      background: rgba(239, 68, 68, 0.16);
+      border-color: var(--accent-red);
+      color: #fca5a5;
+    }
+
+    .legal-box {
+      background: rgba(0, 113, 227, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 0.86rem;
+      color: #e2e8f0;
+      display: none;
+      margin-top: 8px;
+    }
+
+    .legal-box.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Comprehensive Exam Section */
+    .exam-wrapper {
+      display: none;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .exam-wrapper.active {
+      display: block;
+    }
+
+    .study-wrapper.hidden {
+      display: none;
+    }
+
+    .exam-header-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px;
+      margin-bottom: 24px;
+      backdrop-filter: var(--glass-blur);
+    }
+
+    .exam-controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0071e3, #38bdf8, #10b981);
+      width: 0%;
+      transition: width 0.35s ease;
+    }
+
+    .exam-question-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 36px;
+      margin-bottom: 24px;
+    }
+
+    .exam-opt-btn {
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      direction: ltr;
+      text-align: left;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .exam-opt-btn:hover:not(:disabled) {
+      border-color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .exam-opt-btn.selected-correct {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: var(--accent-emerald);
+    }
+
+    .exam-opt-btn.selected-wrong {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: var(--accent-red);
+    }
+
+    .exam-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-badge">COLREGs 72</span>
+        <span>MARITIME PRO | تأمين النوبة</span>
+      </a>
+      <div class="nav-links">
+        <button class="nav-btn active" id="tabStudyBtn" onclick="switchMainTab('study')">أقسام تأمين النوبة</button>
+        <button class="nav-btn" id="tabExamBtn" onclick="switchMainTab('exam')">الاختبار الشامل المؤتمت</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pill">
+      <span>●</span>
+      <span>Verified 100% — Navigational Watch (COLREGs 1972)</span>
+    </div>
+    <h1>تأمين النوبة الملاحية.<br><span>بأسلوب تفاعلي فائق الدقة.</span></h1>
+    <p>
+      منصة دراسية متكاملة لقواعد منع التصادم في البحار (COLREGs 1972)، مصممة بواجهة بصرية تحاكي أنوار الملاحة الليلية والأشكال النهارية والإشارات الصوتية مع نظام اختبار مؤتمت بالكامل.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="switchMainTab('exam')">
+        <span>ابدأ الاختبار الشامل (24 سؤالاً)</span>
+        <span>←</span>
+      </button>
+      <button class="btn-glass" onclick="revealAllAnswers()">
+        إظهار / إخفاء جميع الإجابات والشرح القانوني
+      </button>
+    </div>
+  </section>
+
+  <!-- Bento Grid Overview -->
+  <section class="bento-stats">
+    <div class="bento-card">
+      <div class="bento-number">24</div>
+      <div class="bento-title">سؤالاً وزارياً موثقاً</div>
+      <div class="bento-sub">شاملة الخيارات الإنجليزية والترجمة العربية الدقيقة</div>
+    </div>
+    <div class="bento-card">
+      <div class="bento-number">5</div>
+      <div class="bento-title">أقسام تخصصية للنوبة</div>
+      <div class="bento-sub">مقسمة حسب قواعد الأنوار والأشكال والرسو والضباب</div>
+    </div>
+    <div class="bento-card">
+      <div class="bento-number">Rules 23–36</div>
+      <div class="bento-title">السند القانوني الكامل</div>
+      <div class="bento-sub">تفسير مرجعي لكل إجابة وفق اتفاقية COLREGs 1972</div>
+    </div>
+    <div class="bento-card">
+      <div class="bento-number">100%</div>
+      <div class="bento-title">محاكاة بصرية للأنوار</div>
+      <div class="bento-sub">رسوم توضيحية لأنوار الصاري والأشكال النهارية</div>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- STUDY SECTIONS VIEW -->
+    <div id="studyView" class="study-wrapper">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">أقسام مادة تأمين النوبة الملاحية</h2>
+          <p class="section-subtitle">اختر القسم الفرعي لتصفح الأسئلة، أو اضغط على أي خيار داخل البطاقة للتحقق الفوري من إجابتك وعرض السند القانوني.</p>
+        </div>
+      </div>
+
+      <!-- Sub-sections Filter Bar -->
+      <div class="category-bar" id="categoryBar">
+        <button class="cat-chip active" onclick="filterCategory('all', this)">
+          <span>جميع الأقسام</span>
+          <span class="cat-count">24</span>
+        </button>
+        <button class="cat-chip" onclick="filterCategory('special', this)">
+          <span>السفن المقيدة والعاجزة والعمليات الخاصة (RAM & NUC)</span>
+          <span class="cat-count">7</span>
+        </button>
+        <button class="cat-chip" onclick="filterCategory('power_pilot', this)">
+          <span>السفن الآلية، الحوامات، والإرشاد</span>
+          <span class="cat-count">4</span>
+        </button>
+        <button class="cat-chip" onclick="filterCategory('fishing', this)">
+          <span>سفن الصيد والجر البحري (Fishing & Trawling)</span>
+          <span class="cat-count">3</span>
+        </button>
+        <button class="cat-chip" onclick="filterCategory('anchor', this)">
+          <span>الرسو في المخطاف (Anchored Vessels)</span>
+          <span class="cat-count">4</span>
+        </button>
+        <button class="cat-chip" onclick="filterCategory('sound_distress', this)">
+          <span>الإشارات الصوتية، الضباب، والاستغاثة</span>
+          <span class="cat-count">6</span>
+        </button>
+      </div>
+
+      <!-- Questions Grid -->
+      <div class="questions-grid" id="questionsGrid"></div>
+    </div>
+
+    <!-- COMPREHENSIVE EXAM VIEW -->
+    <div id="examView" class="exam-wrapper">
+      <div class="exam-header-card">
+        <div class="exam-controls-bar">
+          <div>
+            <h2 style="font-size: 1.5rem; font-weight: 900;">الاختبار الشامل المؤتمت — تأمين نوبة ملاحية</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;" id="examStatusText">السؤال 1 من 24</p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <span class="q-badge" id="examScoreBadge" style="font-size: 0.9rem; padding: 8px 16px;">النتيجة: 0 / 24</span>
+            <button class="btn-glass" style="padding: 8px 18px; font-size: 0.85rem;" onclick="startExam(true)">خلط الأسئلة وإعادة البدء</button>
+          </div>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="examProgressBar"></div>
+        </div>
+      </div>
+
+      <div id="examActiveContainer" class="exam-question-box">
+        <!-- Dynamically populated exam question -->
+      </div>
+
+      <div class="exam-footer-nav">
+        <button class="btn-glass" id="prevExamBtn" onclick="navigateExam(-1)">السؤال السابق</button>
+        <button class="btn-primary" id="nextExamBtn" onclick="navigateExam(1)">السؤال التالي ←</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>MARITIME PRO — بوابة الدراسة البحرية وتأمين النوبة الملاحية (COLREGs 1972) • مصمم للعمل المباشر عبر GitHub Pages</p>
+  </footer>
+
+  <script>
+    // Complete dataset of all 24 verified questions from the PDF
+    const questionsData = [
+      {
+        id: 1,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(b)(ii)",
+        visualType: "ram_shapes",
+        en: "By day, you sight a vessel displaying three shapes in a vertical line. The top and bottom shapes are balls, and the middle shape is a diamond. Which vessel are you observing?",
+        ar: "خلال النهار، شاهدت سفينة ترفع ثلاثة أشكال في خط رأسي: الشكل العلوي والسفلي كرتان، والشكل الأوسط معين. ما هي السفينة التي تشاهدها؟",
+        options: [
+          "A) vessel not under command",
+          "B) restricted in maneuver",
+          "C) A & B",
+          "D) not A or B"
+        ],
+        correct: 1,
+        explanation: "السفينة المقيدة في قدرتها على المناورة (RAM) ترفع نهاراً: كرة - معين - كرة بشكل رأسي وفق القاعدة Rule 27(b)(ii)."
+      },
+      {
+        id: 2,
+        category: "fishing",
+        categoryName: "سفن الصيد والجر",
+        rule: "Rule 26(b)(ii)",
+        visualType: "cones_together",
+        en: "A 25-meter vessel trawling is required to exhibit which shape(s)?",
+        ar: "سفينة بطول 25 متراً تعمل بالصيد بالجر (Trawling)، ما هو الشكل أو الأشكال المطلوب منها رفعها نهاراً؟",
+        options: [
+          "A) two cones, apexes together",
+          "B) two balls",
+          "C) a cone, apex downward and outboard",
+          "D) a basket"
+        ],
+        correct: 0,
+        explanation: "ترفع سفينة الجر مخروطين تلتقي قمتاهما في خط رأسي (السلة مسموحة فقط للسفن التي يقل طولها عن 20 متراً) وفق Rule 26(b)(ii)."
+      },
+      {
+        id: 3,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Rule 32(c)",
+        visualType: "prolonged_blast",
+        en: "The terms prolonged blast means a blast of from?",
+        ar: "المصطلح صفقة طويلة (Prolonged Blast) يعني صفارة مدتها من؟",
+        options: [
+          "A) about one second",
+          "B) two to four seconds",
+          "C) four to six seconds",
+          "D) eight to ten seconds"
+        ],
+        correct: 2,
+        explanation: "الصفقة الطويلة هي صوت صفارة يستمر من 4 إلى 6 ثوانٍ وفق القاعدة Rule 32(c)."
+      },
+      {
+        id: 4,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Rule 36",
+        visualType: "searchlight",
+        en: "Which of the signals, other than a distress signal, can be used by a vessel to attract attention?",
+        ar: "أي من الإشارات التالية (بخلاف إشارة الاستغاثة) يمكن للسفينة استخدامها لجذب الانتباه؟",
+        options: [
+          "A) An orange smoke signal",
+          "B) The vessel's search light",
+          "C) A red star shell",
+          "D) A burning barrel"
+        ],
+        correct: 1,
+        explanation: "يجوز استخدام كشاف الضوء (Searchlight) لجذب الانتباه وفق القاعدة 36، بينما الخيارات الأخرى هي إشارات استغاثة (الملحق 4)."
+      },
+      {
+        id: 5,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Annex IV, Para 1(g)",
+        visualType: "flames_distress",
+        en: "If you saw flames aboard a vessel but could see the vessel was not on fire, what would this indicate? (annex 4)",
+        ar: "إذا رأيت ألسنة لهب على متن سفينة لكنك تأكدت أنها ليست محترقة، إلى ماذا تشير هذه الإشارة؟ (الملحق 4)",
+        options: [
+          "A) The vessel was attempting to attract the attention of a pilot boat",
+          "B) its man over board",
+          "C) The vessel required immediate assistance",
+          "D) The crew was trying to get warm"
+        ],
+        correct: 2,
+        explanation: "اللهب على السفينة (مثل إشعال برميل زيت أو قطران) هو إشارة استغاثة رسمية تدل على طلب المساعدة الفورية وفق الملحق الرابع."
+      },
+      {
+        id: 6,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Rule 32(b)",
+        visualType: "short_blast",
+        en: "What is the duration of a \"short blast\" on the whistle?",
+        ar: "ما هي مدة الصفقة القصيرة (Short Blast) بالصفارة؟",
+        options: [
+          "A) 1 second",
+          "B) 4 to 6 seconds",
+          "C) 8 to 12 seconds",
+          "D) 12 to 15 seconds"
+        ],
+        correct: 0,
+        explanation: "الصفقة القصيرة تعني صفيراً يستمر حوالي ثانية واحدة (about 1 second) وفق Rule 32(b)."
+      },
+      {
+        id: 7,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Rule 35(a)",
+        visualType: "prolonged_blast",
+        en: "Which signal shall a vessel underway and making way in fog shall sound every two minutes?",
+        ar: "أي إشارة صوتية يجب أن تطلقها سفينة ذات دفع ميكانيكي مبحرة وشاقة طريقها في الضباب كل دقيقتين؟",
+        options: [
+          "A) Three distinct blasts",
+          "B) One prolonged blast",
+          "C) One prolonged blast and three short blasts",
+          "D) Two prolonged blasts"
+        ],
+        correct: 1,
+        explanation: "السفينة المبحرة الشاقة طريقها بالماء تطلق صفقة طويلة واحدة بفواصل زمنية لا تزيد عن دقيقتين وفق Rule 35(a)."
+      },
+      {
+        id: 8,
+        category: "sound_distress",
+        categoryName: "الإشارات الصوتية والاستغاثة",
+        rule: "Rule 35(e)",
+        visualType: "towed_blast",
+        en: "In a dense fog you hear a whistle signal ahead of one prolonged blast followed by three short blasts. Which vessel is required to sound this signal?",
+        ar: "في ضباب كثيف سمعت صفارة أمامك: صفقة طويلة تليها 3 صفقات قصيرة. أي سفينة ملزمة بإطلاق هذه الإشارة؟",
+        options: [
+          "A) Vessels not under command",
+          "B) A manned vessel being towed",
+          "C) fishing vessels underway trawling",
+          "D) A pilot vessel underway making a special signal"
+        ],
+        correct: 1,
+        explanation: "السفينة المقطورة والمأهولة (أو آخر سفينة مقطورة إن كانت مأهولة) تطلق صفقة طويلة متبوعة بثلاث صفقات قصيرة وفق Rule 35(e)."
+      },
+      {
+        id: 9,
+        category: "power_pilot",
+        categoryName: "السفن الآلية والحوامات والإرشاد",
+        rule: "Rule 23(a)",
+        visualType: "power_150m",
+        en: "A power-driven vessel with a 150-meter is required to display which lights?",
+        ar: "سفينة ذات دفع ميكانيكي طولها 150 متراً، ما هي الأضواء الملزمة بعرضها ليلاً؟",
+        options: [
+          "A) a masthead light forward and aft masthead",
+          "B) side lights and stern light",
+          "C) a masthead light forward",
+          "D) side lights and aft masthead light",
+          "E) A & B"
+        ],
+        correct: 4,
+        explanation: "السفينة الآلية بطول 50 متراً فأكثر ملزمة بنور صاري أمامي ونور صاري خلفي بالإضافة إلى أنوار الجوانب ونور المؤخرة (A + B معاً) وفق Rule 23(a)."
+      },
+      {
+        id: 10,
+        category: "power_pilot",
+        categoryName: "السفن الآلية والحوامات والإرشاد",
+        rule: "Rule 23(b)",
+        visualType: "hovercraft_amber",
+        en: "The an air cushion vessel light when operating in the non-displacement mode is a-",
+        ar: "النور المميز للمركبة ذات الوسادة الهوائية (Hovercraft) عند عملها في الوضع غير المزاح هو:",
+        options: [
+          "A) flashing amber light",
+          "B) yellow light with the same characteristics as the stern light",
+          "C) all-round yellow light",
+          "D) yellow light with the same characteristics as the masthead light"
+        ],
+        correct: 0,
+        explanation: "تعرض ضوءاً وميضياً كهرمانياً / أصفر (flashing amber/yellow light) يرى من جميع الجهات 360 درجة وفق Rule 23(b)."
+      },
+      {
+        id: 11,
+        category: "anchor",
+        categoryName: "الرسو في المخطاف",
+        rule: "Rule 30(b)",
+        visualType: "anchor_1white",
+        en: "When anchoring a 25-meter vessel at night, you must show-",
+        ar: "عند رسو سفينة طولها 25 متراً في المخطاف ليلاً، يجب أن تعرض:",
+        options: [
+          "A) one all-round white light",
+          "B) two all-round white lights",
+          "C) one all-round white light and the side lights",
+          "D) the side lights and a stern light"
+        ],
+        correct: 0,
+        explanation: "السفينة التي يقل طولها عن 50 متراً في الرسو يمكنها الاكتفاء بنور أبيض شامل واحد في أفضل مكان للرؤية وفق Rule 30(b)."
+      },
+      {
+        id: 12,
+        category: "anchor",
+        categoryName: "الرسو في المخطاف",
+        rule: "Rule 30(e)",
+        visualType: "anchor_exempt",
+        en: "When anchored at night, would NOT be required to show anchor lights?",
+        ar: "أي من السفن التالية عند رسوها ليلاً لا تكون ملزمة بعرض أنوار المخطاف؟",
+        options: [
+          "A) A vessel less than 7 meters in length",
+          "B) A vessel on pilotage duty",
+          "C) A vessel dredging",
+          "D) A power driven vessel"
+        ],
+        correct: 0,
+        explanation: "السفينة التي يقل طولها عن 7 أمتار عند رسوها خارج الممرات الضيقة ومناطق الملاحة العادية غير ملزمة بأنوار الرسو وفق Rule 30(e)."
+      },
+      {
+        id: 13,
+        category: "anchor",
+        categoryName: "الرسو في المخطاف",
+        rule: "Rule 30(a) & (b)",
+        visualType: "anchor_2white",
+        en: "What is the minimum length of vessels required to show two anchor lights?",
+        ar: "ما هو الحد الأدنى لطول السفن الملزمة بإظهار نورين للمخطاف (أمامي وخلفي) عند الرسو؟",
+        options: [
+          "A) 40 meters",
+          "B) 12 meters",
+          "C) 100 meters",
+          "D) 50 meters"
+        ],
+        correct: 3,
+        explanation: "السفن بطول 50 متراً فأكثر ملزمة بنورين شاملين للرسو (أحدهما بالمقدم والآخر بالمؤخر) وفق Rule 30(a) & 30(b)."
+      },
+      {
+        id: 14,
+        category: "anchor",
+        categoryName: "الرسو في المخطاف",
+        rule: "Rule 30(a)",
+        visualType: "anchor_2white",
+        en: "Which statement is TRUE concerning a vessel of 150 meters in length at anchor?",
+        ar: "أي من العبارات التالية صحيحة بشأن سفينة طولها 150 متراً راسية في المخطاف؟",
+        options: [
+          "A) She may show an all-round white light where it can best be seen.",
+          "B) She must show an all-round white light forward and a second such light aft.",
+          "C) The showing of working or equivalent lights to illuminate her deck",
+          "D) None of the above"
+        ],
+        correct: 1,
+        explanation: "بما أن طولها يزيد عن 50 متراً، فهي ملزمة قطعاً بعرض نور أبيض شامل في المقدم ونور ثانٍ في المؤخر وفق Rule 30(a)."
+      },
+      {
+        id: 15,
+        category: "power_pilot",
+        categoryName: "السفن الآلية والحوامات والإرشاد",
+        rule: "Rule 29(a)",
+        visualType: "pilot_lights",
+        en: "A pilot vessel engaged on pilotage duty shall exhibit lights-",
+        ar: "سفينة الإرشاد أثناء أداء واجب الإرشاد تعرض أنواراً:",
+        options: [
+          "A) two all round red and white",
+          "B) two all round light, side and stern light",
+          "C) upper white lower red",
+          "D) B & C"
+        ],
+        correct: 3,
+        explanation: "تعرض نورين شاملين رأسياً الأعلى أبيض والأسفل أحمر (C)، وعند إبحارها تعرض بالإضافة إلى ذلك أنوار الجوانب ونور المؤخرة (B). لذا الخيار الشامل هو (D: B & C)."
+      },
+      {
+        id: 16,
+        category: "fishing",
+        categoryName: "سفن الصيد والجر",
+        rule: "Rule 26(c)(i)",
+        visualType: "red_over_white",
+        en: "At night, which lights would you see on a vessel engaged in fishing, other than trawling?",
+        ar: "ليلاً، ما هي الأنوار التي تشاهدها على سفينة صيد تعمل بوسائل أخرى غير الصيد بالجر؟",
+        options: [
+          "A) Two red lights, one over the other",
+          "B) A green light over a red light",
+          "C) A red light over a white light",
+          "D) A white light over a red light"
+        ],
+        correct: 2,
+        explanation: "صيد غير الجر: نور أحمر فوق نور أبيض شاملين في خط رأسي (Red over White, fishing at night) وفق Rule 26(c)(i)."
+      },
+      {
+        id: 17,
+        category: "fishing",
+        categoryName: "سفن الصيد والجر",
+        rule: "Rule 26(b)(i)",
+        visualType: "green_over_white",
+        en: "A vessel showing all round a green light over a white light in a vertical is - (R 26)",
+        ar: "سفينة تعرض نوراً أخضر شاملاً فوق نور أبيض في خط رأسي هي (القاعدة 26):",
+        options: [
+          "A) engaged in underwater construction",
+          "B) sailing vessel",
+          "C) a pilot vessel",
+          "D) trawling"
+        ],
+        correct: 3,
+        explanation: "أخضر فوق أبيض رأسي يدل على سفينة صيد بالجر (Green over White, trawling at night) وفق Rule 26(b)(i)."
+      },
+      {
+        id: 18,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(d)(ii)",
+        visualType: "two_green",
+        en: "At night, which lights are required to be shown by a dredge on the side of the dredge which an other vessel may pass?",
+        ar: "ليلاً، ما هي الأنوار التي تعرضها الكراكة على الجانب الصالح لمرور السفن الأخرى بأمان؟",
+        options: [
+          "A) One red light",
+          "B) Two green lights",
+          "C) One white light",
+          "D) Two red lights"
+        ],
+        correct: 1,
+        explanation: "تعرض نورين أخضرين شاملين في خط رأسي على الجانب المسموح بالمرور منه (ونورين أحمرين على جانب العائق) وفق Rule 27(d)(ii)."
+      },
+      {
+        id: 19,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(a)(ii)",
+        visualType: "two_balls",
+        en: "Which vessel must exhibit two balls in a vertical line?",
+        ar: "أي سفينة يجب أن تعرض كرتين في خط رأسي نهاراً؟",
+        options: [
+          "A) Any vessel towing astern",
+          "B) A vessel not under command",
+          "C) A vessel not under command, at anchor",
+          "D) A being towed"
+        ],
+        correct: 1,
+        explanation: "السفينة العاجزة عن القيادة (Not Under Command - NUC) تعرض كرتين سوداوين رأسياً وفق Rule 27(a)(ii)."
+      },
+      {
+        id: 20,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(d)(i)",
+        visualType: "two_red",
+        en: "By night, you sight the lights of a vessel engaged in underwater operations. If an obstruction exists on the port side of the vessel, it will be marked by :-",
+        ar: "ليلاً، شاهدت أنوار سفينة تعمل بعمليات تحت الماء. إذا وجد عائق على جانب الميسرة (Port side)، فبأي أنوار يُعلم؟",
+        options: [
+          "A) a floodlight",
+          "B) two red lights in a vertical line",
+          "C) a single red light",
+          "D) any visible lights"
+        ],
+        correct: 1,
+        explanation: "يُعلم جانب العائق بنورين أحمرين شاملين في خط رأسي وفق Rule 27(d)(i)."
+      },
+      {
+        id: 21,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(b)(ii)",
+        visualType: "ram_shapes",
+        en: "Which vessel must exhibit three shapes the highest and lower a balls, the middle diamond in a vertical?",
+        ar: "أي سفينة تعرض ثلاثة أشكال رأسية: الأعلى والأسفل كرتان والأوسط معين؟",
+        options: [
+          "A) vessel restricted in her ability to maneuver",
+          "B) towing vessel",
+          "C) vessel in underwater operation",
+          "D) fishing vessel engaged in fishing"
+        ],
+        correct: 0,
+        explanation: "السفينة المقيدة في قدرتها على المناورة (Restricted in Ability to Maneuver - RAM) وفق Rule 27(b)(ii)."
+      },
+      {
+        id: 22,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 3(g)",
+        visualType: "sailing_exempt",
+        en: "According to the Rules, which vessel is NOT restricted in her ability to maneuver?",
+        ar: "وفقاً للقواعد الدولية، أي من السفن التالية لا تعتبر سفينة مقيدة في قدرتها على المناورة؟",
+        options: [
+          "A) A vessel servicing a navigation marker",
+          "B) A sailing vessel",
+          "C) A vessel mine clearing",
+          "D) A vessel dredging"
+        ],
+        correct: 1,
+        explanation: "السفينة الشراعية لها قواعد خاصة بها، وليست مدرجة تحت تعريف السفن مقيدة المناورة (RAM) وفق Rule 3(g)."
+      },
+      {
+        id: 23,
+        category: "power_pilot",
+        categoryName: "السفن الآلية والحوامات والإرشاد",
+        rule: "Rule 23(d)(i)",
+        visualType: "power_12m",
+        en: "A power driven vessel of less than 12 meters in length should exhibit at night :-",
+        ar: "سفينة ذات دفع ميكانيكي يقل طولها عن 12 متراً، ماذا يجوز لها أن تعرض ليلاً؟",
+        options: [
+          "A) all round red light above white",
+          "B) all round white above red",
+          "C) all round white light and side light",
+          "D) all round red and side light"
+        ],
+        correct: 2,
+        explanation: "يجوز لها الاستعاضة عن نور الصاري ونور المؤخرة بنور أبيض شامل مع أنوار الجوانب وفق Rule 23(d)(i)."
+      },
+      {
+        id: 24,
+        category: "special",
+        categoryName: "السفن المقيدة والعاجزة",
+        rule: "Rule 27(f)",
+        visualType: "three_green",
+        en: "A vessel engaged in mine clearance operations shall in addition exhibit to power driven vessel:",
+        ar: "سفينة تقوم بعمليات إزالة وتطهير الألغام يجب أن تعرض، بالإضافة إلى أنوار سفينة الدفع الميكانيكي:",
+        options: [
+          "A) two all round green light",
+          "B) three all round green light",
+          "C) two all round red and white in middle",
+          "D) three all round white and side lights"
+        ],
+        correct: 1,
+        explanation: "تعرض ثلاثة أنوار خضر شاملة (أو ثلاث كرات نهاراً) واحد عند قمة الصاري الأمامي وواحد عند كل طرف من طرفي ساحة الصاري الأمامي وفق Rule 27(f)."
+      }
+    ];
+
+    // Visual Diagram Generator for each question
+    function getVisualSimHTML(type) {
+      switch(type) {
+        case "ram_shapes":
+          return `<span class="sim-label">DAY SHAPE (RAM)</span>
+                  <div class="mast-pole">
+                    <div class="shape-ball"></div>
+                    <div class="shape-diamond"></div>
+                    <div class="shape-ball"></div>
+                  </div>`;
+        case "two_balls":
+          return `<span class="sim-label">DAY SHAPE (NUC)</span>
+                  <div class="mast-pole">
+                    <div class="shape-ball"></div>
+                    <div class="shape-ball"></div>
+                  </div>`;
+        case "cones_together":
+          return `<span class="sim-label">TRAWLING SHAPE</span>
+                  <div style="font-family:Inter;font-weight:800;color:#38bdf8;font-size:1.1rem;line-height:1;">▼<br>▲</div>`;
+        case "red_over_white":
+          return `<span class="sim-label">FISHING (NIGHT)</span>
+                  <div class="mast-pole">
+                    <div class="light-dot light-red"></div>
+                    <div class="light-dot light-white"></div>
+                  </div>`;
+        case "green_over_white":
+          return `<span class="sim-label">TRAWLING (NIGHT)</span>
+                  <div class="mast-pole">
+                    <div class="light-dot light-green"></div>
+                    <div class="light-dot light-white"></div>
+                  </div>`;
+        case "pilot_lights":
+          return `<span class="sim-label">PILOT VESSEL</span>
+                  <div class="mast-pole">
+                    <div class="light-dot light-white"></div>
+                    <div class="light-dot light-red"></div>
+                  </div>`;
+        case "two_green":
+          return `<span class="sim-label">SAFE PASS SIDE</span>
+                  <div class="mast-pole">
+                    <div class="light-dot light-green"></div>
+                    <div class="light-dot light-green"></div>
+                  </div>`;
+        case "two_red":
+          return `<span class="sim-label">OBSTRUCTION SIDE</span>
+                  <div class="mast-pole">
+                    <div class="light-dot light-red"></div>
+                    <div class="light-dot light-red"></div>
+                  </div>`;
+        case "three_green":
+          return `<span class="sim-label">MINE CLEARANCE</span>
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                    <div class="light-dot light-green"></div>
+                    <div style="display:flex;gap:24px;">
+                      <div class="light-dot light-green"></div>
+                      <div class="light-dot light-green"></div>
+                    </div>
+                  </div>`;
+        case "hovercraft_amber":
+          return `<span class="sim-label">HOVERCRAFT 360°</span>
+                  <div class="light-dot light-amber"></div>`;
+        case "anchor_1white":
+          return `<span class="sim-label">ANCHOR &lt; 50m</span>
+                  <div class="light-dot light-white"></div>`;
+        case "anchor_2white":
+          return `<span class="sim-label">ANCHOR ≥ 50m</span>
+                  <div style="display:flex;gap:36px;align-items:center;">
+                    <div class="light-dot light-white"></div>
+                    <div class="light-dot light-white" style="margin-top:14px;"></div>
+                  </div>`;
+        case "power_12m":
+          return `<span class="sim-label">PDV &lt; 12m</span>
+                  <div style="display:flex;gap:14px;align-items:center;">
+                    <div class="light-dot light-red"></div>
+                    <div class="light-dot light-white"></div>
+                    <div class="light-dot light-green"></div>
+                  </div>`;
+        case "power_150m":
+          return `<span class="sim-label">PDV 150m</span>
+                  <div style="display:flex;gap:16px;align-items:center;">
+                    <div class="light-dot light-white"></div>
+                    <div class="light-dot light-white" style="margin-bottom:14px;"></div>
+                    <div class="light-dot light-red"></div>
+                    <div class="light-dot light-green"></div>
+                  </div>`;
+        case "prolonged_blast":
+          return `<span class="sim-label">SOUND SIGNAL</span>
+                  <div style="font-family:Inter;font-weight:800;color:#38bdf8;letter-spacing:2px;">━━━━━ (4–6s)</div>`;
+        case "short_blast":
+          return `<span class="sim-label">SOUND SIGNAL</span>
+                  <div style="font-family:Inter;font-weight:800;color:#10b981;letter-spacing:2px;">━━ (1s)</div>`;
+        case "towed_blast":
+          return `<span class="sim-label">FOG TOWED SIGNAL</span>
+                  <div style="font-family:Inter;font-weight:800;color:#f59e0b;letter-spacing:3px;">━━━━━ • • •</div>`;
+        default:
+          return `<span class="sim-label">COLREGs 1972</span>
+                  <div style="font-family:Inter;font-weight:800;color:#38bdf8;">⚓ MARITIME RULE</div>`;
+      }
+    }
+
+    let currentCategory = 'all';
+    let allRevealed = false;
+
+    function renderStudyCards() {
+      const grid = document.getElementById('questionsGrid');
+      const filtered = currentCategory === 'all'
+        ? questionsData
+        : questionsData.filter(q => q.category === currentCategory);
+
+      grid.innerHTML = filtered.map(q => {
+        const optsHTML = q.options.map((opt, idx) => {
+          const revealClass = allRevealed && idx === q.correct ? 'correct-reveal' : '';
+          return `<div class="opt-item ${revealClass}" onclick="checkStudyOption(${q.id}, ${idx}, this)">
+                    <span>${opt}</span>
+                    <span class="opt-status">${allRevealed && idx === q.correct ? '✓' : ''}</span>
+                  </div>`;
+        }).join('');
+
+        return `
+          <div class="q-card" id="qcard-${q.id}">
+            <div>
+              <div class="q-card-top">
+                <span class="q-badge">Question #${q.id} • ${q.categoryName}</span>
+                <span class="rule-tag">${q.rule}</span>
+              </div>
+              <div class="visual-sim">
+                ${getVisualSimHTML(q.visualType)}
+              </div>
+              <div class="q-en">${q.en}</div>
+              <div class="q-ar">${q.ar}</div>
+              <div class="options-list">
+                ${optsHTML}
+              </div>
+            </div>
+            <div class="legal-box ${allRevealed ? 'show' : ''}" id="legal-${q.id}">
+              <strong>السند القانوني والشرح (${q.rule}):</strong><br>
+              ${q.explanation}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function checkStudyOption(qId, selectedIdx, el) {
+      const q = questionsData.find(item => item.id === qId);
+      const card = document.getElementById(`qcard-${qId}`);
+      const options = card.querySelectorAll('.opt-item');
+      const legalBox = document.getElementById(`legal-${qId}`);
+
+      options.forEach((optEl, idx) => {
+        optEl.classList.remove('correct-reveal', 'wrong-reveal');
+        if (idx === q.correct) {
+          optEl.classList.add('correct-reveal');
+          optEl.querySelector('.opt-status').textContent = '✓ الإجابة الصحيحة';
+        } else if (idx === selectedIdx) {
+          optEl.classList.add('wrong-reveal');
+          optEl.querySelector('.opt-status').textContent = '✗';
+        }
+      });
+
+      legalBox.classList.add('show');
+    }
+
+    function filterCategory(cat, btnEl) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-chip').forEach(btn => btn.classList.remove('active'));
+      btnEl.classList.add('active');
+      renderStudyCards();
+    }
+
+    function revealAllAnswers() {
+      allRevealed = !allRevealed;
+      renderStudyCards();
+    }
+
+    // COMPREHENSIVE EXAM ENGINE
+    let examQuestions = [...questionsData];
+    let currentExamIndex = 0;
+    let userExamAnswers = {};
+
+    function switchMainTab(tab) {
+      const studyView = document.getElementById('studyView');
+      const examView = document.getElementById('examView');
+      const tabStudyBtn = document.getElementById('tabStudyBtn');
+      const tabExamBtn = document.getElementById('tabExamBtn');
+
+      if (tab === 'exam') {
+        studyView.classList.add('hidden');
+        examView.classList.add('active');
+        tabStudyBtn.classList.remove('active');
+        tabExamBtn.classList.add('active');
+        startExam(false);
+      } else {
+        studyView.classList.remove('hidden');
+        examView.classList.remove('active');
+        tabStudyBtn.classList.add('active');
+        tabExamBtn.classList.remove('active');
+      }
+      window.scrollTo({ top: 380, behavior: 'smooth' });
+    }
+
+    function startExam(shuffle) {
+      examQuestions = [...questionsData];
+      if (shuffle) {
+        examQuestions.sort(() => Math.random() - 0.5);
+      }
+      currentExamIndex = 0;
+      userExamAnswers = {};
+      renderExamQuestion();
+    }
+
+    function renderExamQuestion() {
+      const q = examQuestions[currentExamIndex];
+      const total = examQuestions.length;
+      const answeredCount = Object.keys(userExamAnswers).length;
+      let score = 0;
+      Object.keys(userExamAnswers).forEach(qId => {
+        const questionObj = questionsData.find(item => item.id === parseInt(qId));
+        if (userExamAnswers[qId] === questionObj.correct) score++;
+      });
+
+      document.getElementById('examStatusText').textContent = `السؤال ${currentExamIndex + 1} من ${total} (${q.categoryName})`;
+      document.getElementById('examScoreBadge').textContent = `النتيجة: ${score} / ${total}`;
+      document.getElementById('examProgressBar').style.width = `${((currentExamIndex + 1) / total) * 100}%`;
+
+      const userAns = userExamAnswers[q.id];
+      const hasAnswered = userAns !== undefined;
+
+      const optionsHTML = q.options.map((opt, idx) => {
+        let btnClass = 'exam-opt-btn';
+        let icon = '';
+        if (hasAnswered) {
+          if (idx === q.correct) {
+            btnClass += ' selected-correct';
+            icon = '✓';
+          } else if (idx === userAns) {
+            btnClass += ' selected-wrong';
+            icon = '✗';
+          }
+        }
+        return `<button class="${btnClass}" ${hasAnswered ? 'disabled' : ''} onclick="selectExamAnswer(${q.id}, ${idx})">
+                  <span>${opt}</span>
+                  <span>${icon}</span>
+                </button>`;
+      }).join('');
+
+      document.getElementById('examActiveContainer').innerHTML = `
+        <div class="q-card-top">
+          <span class="q-badge">Question #${q.id}</span>
+          <span class="rule-tag">${q.rule}</span>
+        </div>
+        <div class="visual-sim">
+          ${getVisualSimHTML(q.visualType)}
+        </div>
+        <div class="q-en" style="font-size: 1.15rem; margin-bottom: 12px;">${q.en}</div>
+        <div class="q-ar" style="font-size: 1.05rem; margin-bottom: 24px;">${q.ar}</div>
+        <div>${optionsHTML}</div>
+        <div class="legal-box ${hasAnswered ? 'show' : ''}" style="margin-top: 16px;">
+          <strong>السند القانوني والشرح (${q.rule}):</strong><br>
+          ${q.explanation}
+        </div>
+      `;
+
+      document.getElementById('prevExamBtn').disabled = currentExamIndex === 0;
+      document.getElementById('nextExamBtn').textContent = currentExamIndex === total - 1 ? 'إعادة الاختبار من البداية' : 'السؤال التالي ←';
+    }
+
+    function selectExamAnswer(qId, idx) {
+      userExamAnswers[qId] = idx;
+      renderExamQuestion();
+    }
+
+    function navigateExam(dir) {
+      const total = examQuestions.length;
+      if (currentExamIndex + dir >= total) {
+        startExam(false);
+        return;
+      }
+      if (currentExamIndex + dir >= 0) {
+        currentExamIndex += dir;
+        renderExamQuestion();
+      }
+    }
+
+    // Initialize on load
+    renderStudyCards();
+  </script>
+</body>
+</html>
